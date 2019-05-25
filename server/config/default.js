@@ -1,7 +1,7 @@
 const CONF = {
 	serverHost: 'localhost',
 	networkTimeout: 30000,
-	port: '5757',
+	port: '4747',
 	rootPathname: '',
 
 	mysql: {
@@ -9,7 +9,7 @@ const CONF = {
 		port: 3306,
 		user: 'root',
 		db: 'test',
-		pass: ''
+		pass: '123456'
 		// char: 'utf8mb4'
 	},
 

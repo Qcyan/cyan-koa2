@@ -4,7 +4,6 @@ const debug = require('debug')('koa2:server')
  * 响应处理模块
  */
 
-
 module.exports = async  (ctx, next) => {
 	try {
 		ctx.set('Access-Control-Allow-Origin', '*');

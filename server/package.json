@@ -18,7 +18,9 @@
     "lodash": "^4.17.4",
     "mkdir-p": "0.0.7",
     "mysql": "^2.14.1",
-    "pify": "^2.3.0"
+    "pify": "^2.3.0",
+    "md5": "^2.2.1",
+    "moment": "^2.18.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
