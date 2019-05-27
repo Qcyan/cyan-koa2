@@ -12,11 +12,8 @@ module.exports = async (ctx, next) => {
 			console.log(result)
 		})
 
-	ctx.state.data = {
-		msg: 'hello cyan'
-	};
-
-
-
+		ctx.state.data = {
+			msg: 'hello cyan'
+		};
 
 }

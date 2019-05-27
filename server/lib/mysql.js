@@ -66,21 +66,26 @@ exports.selectAll = () =>{
 	let _sql = "select * from users;"
 	return query(_sql )
 }
-
-// 注册用户
-exports.insertData = ( value ) => {
-
-	// const { name , password , time } = value;
-	let _sql = `insert into users (name,password,time) values (${value})`
+//登录
+exports.login = (value) => {
+	const { name , password } = value;
+	let _sql = `select * from users where name=${name} and password=${password}`
 	return query( _sql )
 }
-// 删除用户
-exports.deleteUserData = ( name ) => {
-	let _sql = `delete from users where name="${name}";`
+// 注册用户
+exports.insertData = ( value ) => {
+	const { name , password , time } = value;
+	// let _sql = 'select into users name=? and password=? and time=?;'
+	let _sql = `insert into users (name,password,time) values (name , password , time)`
 	return query( _sql )
 }
 // 查找用户
 exports.findUserData = ( name ) => {
 	let _sql = `select * from users where name="${name}";`
+	return query( _sql )
+}
+// 删除用户
+exports.deleteUserData = ( name ) => {
+	let _sql = `delete from users where name="${name}";`
 	return query( _sql )
 }

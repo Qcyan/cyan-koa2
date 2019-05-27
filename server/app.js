@@ -1,20 +1,30 @@
 const Koa = require('koa')
 const app = new Koa()
 const debug = require('debug')('koa2:server')
+const views = require('koa-views')
+const statics =  require('koa-static')
+const path = require('path')
 const cors = require('koa2-cors');
 const bodyParser = require('koa-bodyparser')
 const config = require('./config/default')
 const response = require('./middlewares/response')
 
-//连接数据库
-// const mysql = require('./tools/initdb')
-// mysql()
-
-// 使用响应处理中间件
-app.use(response)
+const staticPath = './static';
+app.use(statics(
+	path.join(__dirname, staticPath)
+))
 
 // 解析请求体,数据处理
 app.use(bodyParser())
+
+// 加载模板引擎
+app.use(views(path.join(__dirname, './views'), {
+	extension: 'ejs'
+}))
+
+
+// 使用响应处理中间件
+app.use(response)
 
 //跨域
 app.use(cors());

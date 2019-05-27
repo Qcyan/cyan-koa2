@@ -83,6 +83,7 @@
 			}
 			
 			$('.login').click( ()=>{
+				getVal()
 				$.ajax({
 					url:config.login,
 					data:{
@@ -90,7 +91,9 @@
 						password:passVal
 					},
 					success:(res) => {
-						console.log(res)
+						sessionStorage.token = res.data.tk
+						// sessionStorage.setItem('token',res.data.token)
+						// console.log(res)
 					}
 				})
 			})
