@@ -10,7 +10,8 @@ const CONF = {
 		user: 'root',
 		db: 'test',
 		pass: '123456'
-		// char: 'utf8mb4'
+		// char: 'utf8mb4',
+		// multipleStatements: true
 	},
 
 }

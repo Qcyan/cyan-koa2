@@ -7,18 +7,17 @@
 		<title>Document</title>
 	</head>
 	<body>
-			<h4>点击获取数据</h4>
-			<div class='getData'></div>
+			<h4 class='getData'>点击获取数据</h4>
 		
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 		<script>
 			var token = sessionStorage.getItem('token')
 			$('.getData').click(()=>{
 				$.ajax({
-					url:'/getList',
-					beforeSend: function (xhr) {
-						xhr.setRequestHeader("token", "tokenvalue");
+					url:'http://localhost:4747/api/selectAll',
+					data:{
+						token:token
 					},
-					dataType: "json",
 					success:(res)=>{
 					
 					}

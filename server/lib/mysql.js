@@ -69,14 +69,14 @@ exports.selectAll = () =>{
 //登录
 exports.login = (value) => {
 	const { name , password } = value;
-	let _sql = `select * from users where name=${name} and password=${password}`
+	let _sql = `select * from users where name="${name}" and password="${password}"`
 	return query( _sql )
 }
 // 注册用户
 exports.insertData = ( value ) => {
 	const { name , password , time } = value;
 	// let _sql = 'select into users name=? and password=? and time=?;'
-	let _sql = `insert into users (name,password,time) values (name , password , time)`
+	let _sql = `insert into users (name,password,time) values ("${name}", "${password}" ,"${time}")`
 	return query( _sql )
 }
 // 查找用户

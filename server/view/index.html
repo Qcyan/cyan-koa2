@@ -91,7 +91,8 @@
 						password:passVal
 					},
 					success:(res) => {
-						sessionStorage.token = res.data.tk
+						sessionStorage.token = res.data.tk;
+						location.href = './list.html'
 						// sessionStorage.setItem('token',res.data.token)
 						// console.log(res)
 					}
@@ -102,13 +103,14 @@
 				getVal()
 				$.ajax({
 					url:config.signUp,
+					type:'get',
 					data:{
 						name:nameVal,
 						password:passVal,
 						time:new Date().getTime()
 					},
 					success:(res) => {
-						alert(res.data.msg)
+						// alert(res.data.msg)
 					}
 				})
 			})

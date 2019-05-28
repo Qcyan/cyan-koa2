@@ -13,13 +13,7 @@ const controllers = require('../controllers')
 router.get('/demo', controllers.demo);
 router.get('/login', controllers.user.login);
 router.get('/register', controllers.user.register);
-
-// router.get('/404', async (ctx) => {
-// 	let title = "404"
-// 	await ctx.render('err', {
-// 		title
-// 	})
-// })
+router.get('/selectAll',controllers.user.selectAll);
 
 
 module.exports = router
